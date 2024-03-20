@@ -41,3 +41,27 @@
 .formElement div input{
   margin: 0 1rem;
 }
+
+@media (max-width: 950px) {
+  .formElement {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .formElement {
+    flex-direction: column;
+  }
+  .formElement select, .formElement input {
+    padding: 1rem;
+  }
+  .formElement div {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    gap: 1rem 0rem;
+  }
+  .formElement div button {
+    grid-column: 1/-1;
+  }
+}
