@@ -42,3 +42,24 @@ input[type="checkbox"] {
 .checked {
   text-decoration: line-through;
 }
+
+.orderBy{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.orderBy button {
+  border-radius: 6px;
+  border: 0;
+  background: var(--orange-600);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+}
+
+.orderBy select {
+  background: var(--blue-200);
+  color: var(--white);
+  border-radius: 6px;
+  padding: 0 1rem;
+}

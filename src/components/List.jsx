@@ -2,11 +2,17 @@ import styles from './List.module.css'
 
 import { X } from '@phosphor-icons/react'
 
-export function List({ itens, onDeleteItem, onTaskCompleteToogle }) {
+export function List({
+  orderedItems,
+  onDeleteItem,
+  onTaskCompleteToogle,
+  onselectOrderItens,
+  onCleanList,
+}) {
   return (
     <main className={styles.mainList}>
       <ul className={styles.itemList}>
-        {itens.map((item) => (
+        {orderedItems.map((item) => (
           <li key={item.id}>
             <input
               type="checkbox"
@@ -22,6 +28,17 @@ export function List({ itens, onDeleteItem, onTaskCompleteToogle }) {
           </li>
         ))}
       </ul>
+      <div className={styles.orderBy}>
+        <select
+          name="orderBy"
+          onChange={(e) => onselectOrderItens(e.target.value)}
+        >
+          <option value="recently">Ordernar por mais recentes</option>
+          <option value="stored">Mostrar guardados</option>
+          <option value="alphabetical">Ordem alfabética</option>
+        </select>
+        <button onClick={onCleanList}>Limpar lista</button>
+      </div>
     </main>
   )
 }
