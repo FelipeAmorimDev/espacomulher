@@ -10,6 +10,7 @@ export function List({ itens, onDeleteItem, onTaskCompleteToogle }) {
           <li key={item.id}>
             <input
               type="checkbox"
+              checked={item.isChecked}
               onChange={() => onTaskCompleteToogle(item.id)}
             />
             <p className={item.isChecked ? styles.checked : ''}>

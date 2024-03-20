@@ -18,13 +18,9 @@ export function App() {
 
   function taskCompleteToogle(id) {
     setItens((i) =>
-      i.map((item) => {
-        if (item.id === id) {
-          return { ...item, isChecked: !item.isChecked }
-        } else {
-          return { ...item }
-        }
-      }),
+      i.map((item) =>
+        item.id === id ? { ...item, isChecked: !item.isChecked } : item,
+      ),
     )
   }
 
