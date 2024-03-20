@@ -1,0 +1,34 @@
+:root {
+  --blue-900: #2E4274;
+  --blue-500: #4B527E;
+  --blue-200: #7D81AE;
+
+  --white: #ffffff;
+
+  --red-500: #FF6086;
+
+  --orange-600: #FF854A;
+
+  --brown-100: #E5C3A7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+div[data-js="root"] {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
