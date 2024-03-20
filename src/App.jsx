@@ -15,10 +15,13 @@ export function App() {
       ? itens.filter((item) => item.isChecked)
       : orderBy === 'alphabetical'
       ? Array.from(itens).sort((a, b) => {
-          if (a.name > b.name) {
+          const firstNameLowerCase = a.name.toLowerCase()
+          const secondNameLowerCase = b.name.toLowerCase()
+
+          if (firstNameLowerCase > secondNameLowerCase) {
             return 1
           }
-          if (a.name < b.name) {
+          if (firstNameLowerCase < secondNameLowerCase) {
             return -1
           }
 
