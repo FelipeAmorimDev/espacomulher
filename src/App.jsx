@@ -11,7 +11,20 @@ export function App() {
   const [orderBy, setOrderBy] = useState('recently')
 
   const orderedItems =
-    orderBy === 'stored' ? itens.filter((item) => item.isChecked) : itens
+    orderBy === 'stored'
+      ? itens.filter((item) => item.isChecked)
+      : orderBy === 'alphabetical'
+      ? Array.from(itens).sort((a, b) => {
+          if (a.name > b.name) {
+            return 1
+          }
+          if (a.name < b.name) {
+            return -1
+          }
+
+          return 0
+        })
+      : itens
 
   function retainItem(item) {
     setItens((i) => [...i, item])
