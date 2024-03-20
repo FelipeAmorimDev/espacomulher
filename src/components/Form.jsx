@@ -1,6 +1,8 @@
 import styles from './Form.module.css'
 
 export function Form({ onRetainItem }) {
+  const ids = Array.from({ length: 20 }, () => crypto.randomUUID())
+
   function handleRetainItem(e) {
     e.preventDefault()
 
@@ -21,22 +23,11 @@ export function Form({ onRetainItem }) {
       <label htmlFor="itemName">O que você precisa guardar?</label>
       <div>
         <select name="qntItens">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
+          {ids.map((id, index) => (
+            <option key={id} value={index + 1}>
+              {index + 1}
+            </option>
+          ))}
         </select>
         <input
           type="text"
