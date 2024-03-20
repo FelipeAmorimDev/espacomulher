@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.142rem 0;
+  background: var(--blue-900);
+}
+
+.header h1 {
+  color: var(--brown-100);
+  font-size: 3rem;
+  padding-top: 2.5rem;
+}

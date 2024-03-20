@@ -1,3 +1,9 @@
+import { Header } from './components/Header'
+
 export function App() {
-  return <h1>Boilerplate Vite + React</h1>;
+  return (
+    <>
+      <Header />
+    </>
+  )
 }
