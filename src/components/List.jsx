@@ -3,7 +3,7 @@ import styles from './List.module.css'
 import { X } from '@phosphor-icons/react'
 
 export function List({
-  itens,
+  orderedItems,
   onDeleteItem,
   onTaskCompleteToogle,
   onselectOrderItens,
@@ -11,7 +11,7 @@ export function List({
   return (
     <main className={styles.mainList}>
       <ul className={styles.itemList}>
-        {itens.map((item) => (
+        {orderedItems.map((item) => (
           <li key={item.id}>
             <input
               type="checkbox"

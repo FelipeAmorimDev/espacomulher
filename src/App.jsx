@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Header } from './components/Header'
 import { Form } from './components/Form'
@@ -7,7 +7,11 @@ import { List } from './components/List'
 
 export function App() {
   const [itens, setItens] = useState([])
+
   const [orderBy, setOrderBy] = useState('recently')
+
+  const orderedItems =
+    orderBy === 'stored' ? itens.filter((item) => item.isChecked) : itens
 
   function retainItem(item) {
     setItens((i) => [...i, item])
@@ -26,7 +30,6 @@ export function App() {
   }
 
   function selectOrderItens(value) {
-    console.log(value)
     setOrderBy(value)
   }
 
@@ -35,7 +38,7 @@ export function App() {
       <Header />
       <Form onRetainItem={retainItem} />
       <List
-        itens={itens}
+        orderedItems={orderedItems}
         onTaskCompleteToogle={taskCompleteToogle}
         onDeleteItem={deleteItem}
         onselectOrderItens={selectOrderItens}
