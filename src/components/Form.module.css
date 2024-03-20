@@ -1,0 +1,43 @@
+.formElement {
+  background: var(--blue-500);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  padding: 2rem;
+}
+
+.formElement label {
+  font-size: 1.5rem;
+}
+
+.formElement select, .formElement input {
+  padding:  1rem 2rem;
+  border-radius: 6px;
+  border: 0;
+  background: var(--blue-200);
+  color: var(--white);
+  font-size: 1rem;
+  
+}
+
+.formElement input::placeholder {
+  color: var(--white);
+}
+
+
+.formElement button[type="submit"] {
+  background: var(--red-500);
+  border: 0;
+  border-radius: 6px;
+  padding: 1rem;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formElement div input{
+  margin: 0 1rem;
+}
