@@ -7,6 +7,7 @@ import { List } from './components/List'
 
 export function App() {
   const [itens, setItens] = useState([])
+  const [orderBy, setOrderBy] = useState('recently')
 
   function retainItem(item) {
     setItens((i) => [...i, item])
@@ -24,6 +25,11 @@ export function App() {
     )
   }
 
+  function selectOrderItens(value) {
+    console.log(value)
+    setOrderBy(value)
+  }
+
   return (
     <>
       <Header />
@@ -32,6 +38,7 @@ export function App() {
         itens={itens}
         onTaskCompleteToogle={taskCompleteToogle}
         onDeleteItem={deleteItem}
+        onselectOrderItens={selectOrderItens}
       />
       <Footer itens={itens} />
     </>

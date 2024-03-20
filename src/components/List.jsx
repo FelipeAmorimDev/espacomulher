@@ -2,7 +2,12 @@ import styles from './List.module.css'
 
 import { X } from '@phosphor-icons/react'
 
-export function List({ itens, onDeleteItem, onTaskCompleteToogle }) {
+export function List({
+  itens,
+  onDeleteItem,
+  onTaskCompleteToogle,
+  onselectOrderItens,
+}) {
   return (
     <main className={styles.mainList}>
       <ul className={styles.itemList}>
@@ -22,6 +27,16 @@ export function List({ itens, onDeleteItem, onTaskCompleteToogle }) {
           </li>
         ))}
       </ul>
+      <div className={styles.orderBy}>
+        <select
+          name="orderBy"
+          onChange={(e) => onselectOrderItens(e.target.value)}
+        >
+          <option value="recently">Ordernar por mais recentes</option>
+          <option value="stored">Mostrar guardados</option>
+          <option value="alphabetical">Ordem alfabética</option>
+        </select>
+      </div>
     </main>
   )
 }
