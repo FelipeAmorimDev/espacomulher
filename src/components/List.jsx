@@ -7,6 +7,7 @@ export function List({
   onDeleteItem,
   onTaskCompleteToogle,
   onselectOrderItens,
+  onCleanList,
 }) {
   return (
     <main className={styles.mainList}>
@@ -36,6 +37,7 @@ export function List({
           <option value="stored">Mostrar guardados</option>
           <option value="alphabetical">Ordem alfabética</option>
         </select>
+        <button onClick={onCleanList}>Limpar lista</button>
       </div>
     </main>
   )

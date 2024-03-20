@@ -46,6 +46,10 @@ export function App() {
     setOrderBy(value)
   }
 
+  function cleanList() {
+    setItens([])
+  }
+
   return (
     <>
       <Header />
@@ -55,6 +59,7 @@ export function App() {
         onTaskCompleteToogle={taskCompleteToogle}
         onDeleteItem={deleteItem}
         onselectOrderItens={selectOrderItens}
+        onCleanList={cleanList}
       />
       <Footer itens={itens} />
     </>
